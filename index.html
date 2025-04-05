@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Salão</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="#" />
+</head>
+<body>
+    <header>
+        <h1>Salão de Beleza</h1>
+        <nav>
+            <a href="#" class="active">Agendamento</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+            <a href="admin.html" id="linkAdmin" style="display: none;">Área Administrativa</a>
+            <!-- Botão de logout será adicionado via JavaScript -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção de agendamento -->
+        <section class="agenda" id="secao-agendar">
+            <h2>Faça seu Agendamento</h2>
+            <form id="agendamento-form">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="servico">Serviço:</label>
+                    <select id="servico" name="servico" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="corte">Corte de Cabelo</option>
+                        <option value="tintura">Tintura</option>
+                        <option value="escova">Escova</option>
+                        <option value="manicure">Manicure</option>
+                        <option value="pedicure">Pedicure</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hora">Horário:</label>
+                    <select id="hora" name="hora" required>
+                        <option value="">Selecione um horário</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="observacoes">Observações:</label>
+                    <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-agendar">Agendar</button>
+            </form>
+        </section>
+        
+        <section class="horarios" id="secao-calendario">
+            <h2>Horários Disponíveis</h2>
+            <div class="calendario" id="calendario">
+                <!-- Calendário será preenchido via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Nova seção - Visualizar Agendamentos -->
+        <section class="meus-agendamentos" id="secao-meus-agendamentos" style="display: none;">
+            <h2>Meus Agendamentos</h2>
+            <div class="filtros">
+                <input type="text" id="busca-agendamento" placeholder="Buscar por nome...">
+                <select id="filtro-status">
+                    <option value="todos">Todos</option>
+                    <option value="confirmado">Confirmados</option>
+                    <option value="concluido">Concluídos</option>
+                    <option value="cancelado">Cancelados</option>
+                </select>
+            </div>
+            <div class="lista-agendamentos" id="lista-agendamentos">
+                <!-- Lista de agendamentos será preenchida via JavaScript -->
+                <p class="sem-registros">Nenhum agendamento encontrado.</p>
+            </div>
+        </section>
+    </main>
+
+    <section class="servicos" id="secao-servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <h3>Corte de Cabelo</h3>
+                <p>A partir de R$ 50,00</p>
+            </div>
+            <div class="servico-card">
+                <h3>Tintura</h3>
+                <p>A partir de R$ 80,00</p>
+            </div>
+            <div class="servico-card">
+                <h3>Escova</h3>
+                <p>A partir de R$ 40,00</p>
+            </div>
+            <div class="servico-card">
+                <h3>Manicure</h3>
+                <p>A partir de R$ 30,00</p>
+            </div>
+            <div class="servico-card">
+                <h3>Pedicure</h3>
+                <p>A partir de R$ 35,00</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contato" id="secao-contato" style="display: none;">
+        <h2>Entre em Contato</h2>
+        <div class="contato-info">
+            <p><strong>Telefone:</strong> (11) 99999-9999</p>
+            <p><strong>Email:</strong> contato@salaodebeleza.com</p>
+            <p><strong>Endereço:</strong> Rua Exemplo, 123 - São Paulo/SP</p>
+            <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado, das 9h às 18h</p>
+        </div>
+    </section>
+
+    <!-- Nova seção - Chat -->
+    <section class="chat-container" id="secao-chat" style="display: none;">
+        <h2>Chat do Salão</h2>
+        <div class="chat-content">
+            <div class="chat-messages" id="chat-messages">
+                <div class="mensagem mensagem-atendente">
+                    <div class="mensagem-header">
+                        <span class="mensagem-autor">Atendente</span>
+                        <span class="mensagem-hora">09:00</span>
+                    </div>
+                    <div class="mensagem-conteudo">
+                        Olá! Como posso ajudar você hoje?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="mensagem-input" placeholder="Digite sua mensagem...">
+                <button id="enviar-mensagem">Enviar</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Salão de Beleza - Todos os direitos reservados</p>
+        <div class="contato">
+            <p>Tel: (11) 99999-9999</p>
+            <p>Email: contato@salaodebeleza.com</p>
+            <p>Endereço: Rua Exemplo, 123 - São Paulo/SP</p>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

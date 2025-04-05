@@ -1,0 +1,415 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #8e44ad;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #8e44ad;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    padding: 0.5rem 0;
+    display: block;
+    font-weight: bold;
+}
+
+nav a.active {
+    color: #6c3483;
+    border-bottom: 2px solid #6c3483;
+}
+
+/* Informação do usuário */
+.usuario-info {
+    background-color: #f5f0f9;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 1rem;
+    font-weight: bold;
+    color: #8e44ad;
+}
+
+/* Botão de logout */
+#nav-logout {
+    color: #e74c3c;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Layout para visualização de agendamentos */
+.meus-agendamentos {
+    grid-column: 1 / -1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filtros {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filtros input, .filtros select {
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filtros input {
+    flex: 1;
+}
+
+.lista-agendamentos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.agendamento-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #8e44ad;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.agendamento-card h3 {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.agendamento-card p {
+    margin-bottom: 0.3rem;
+}
+
+.agendamento-card .status {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-confirmado {
+    background-color: #2ecc71;
+}
+
+.status-cancelado {
+    background-color: #e74c3c;
+}
+
+.status-concluido {
+    background-color: #3498db;
+}
+
+.acoes-agendamento {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-cancelar, .btn-concluir {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-concluir {
+    background-color: #3498db;
+    color: white;
+}
+
+.sem-registros {
+    text-align: center;
+    color: #777;
+    padding: 2rem 0;
+}
+
+/* Seção de contato */
+.contato {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contato-info {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+/* Formulário de agendamento */
+.agenda {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-agendar {
+    background-color: #8e44ad;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-agendar:hover {
+    background-color: #6c3483;
+}
+
+/* Calendário */
+.horarios {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendario {
+    min-height: 300px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Lista de serviços */
+.servicos {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.servicos h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.servico-card {
+    background-color: #f9f4fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.contato {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .contato {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Chat */
+.chat-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 0.8rem;
+    background-color: #fff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 0.8rem;
+}
+
+.chat-input button {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chat-input button:hover {
+    background-color: #6c3483;
+}
+
+.mensagem {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.mensagem-cliente {
+    background-color: #e1f5fe;
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+}
+
+.mensagem-atendente {
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 0;
+}
+
+.mensagem-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.mensagem-autor {
+    font-weight: bold;
+}
+
+.mensagem-conteudo {
+    line-height: 1.4;
+} 

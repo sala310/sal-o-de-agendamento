@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Salão de Beleza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login-styles.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="logo">
+            <h1>Salão de Beleza</h1>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" id="login-tab">Login</button>
+            <button class="tab-btn" id="cadastro-tab">Cadastro</button>
+        </div>
+        
+        <div class="forms-container">
+            <!-- Formulário de Login -->
+            <form id="login-form" class="form">
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" name="senha" required>
+                </div>
+                
+                <div class="form-group form-check">
+                    <input type="checkbox" id="lembrar" name="lembrar">
+                    <label for="lembrar">Lembrar-me</label>
+                </div>
+                
+                <button type="submit" class="btn-login">Entrar</button>
+                
+                <div class="form-footer">
+                    <a href="#" id="recuperar-senha">Esqueceu a senha?</a>
+                </div>
+            </form>
+            
+            <!-- Formulário de Cadastro -->
+            <form id="cadastro-form" class="form" style="display: none;">
+                <div class="form-group">
+                    <label for="cadastro-nome">Nome completo:</label>
+                    <input type="text" id="cadastro-nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cadastro-email">Email:</label>
+                    <input type="email" id="cadastro-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cadastro-telefone">Telefone:</label>
+                    <input type="tel" id="cadastro-telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cadastro-senha">Senha:</label>
+                    <input type="password" id="cadastro-senha" name="senha" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cadastro-confirmar-senha">Confirmar senha:</label>
+                    <input type="password" id="cadastro-confirmar-senha" name="confirmar-senha" required>
+                </div>
+                
+                <div class="form-group form-check">
+                    <input type="checkbox" id="termos" name="termos" required>
+                    <label for="termos">Concordo com os <a href="#" id="mostrar-termos">termos e condições</a></label>
+                </div>
+                
+                <button type="submit" class="btn-cadastro">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal de Termos e Condições -->
+    <div id="modal-termos" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Termos e Condições</h2>
+            <div class="termos-container">
+                <p>Ao utilizar o sistema de agendamento do Salão de Beleza, você concorda com os seguintes termos:</p>
+                <ol>
+                    <li>Seus dados pessoais serão usados apenas para fins de agendamento e comunicação sobre seus atendimentos.</li>
+                    <li>Cancelamentos devem ser feitos com pelo menos 4 horas de antecedência.</li>
+                    <li>Ao não comparecer a um agendamento sem aviso prévio, poderá haver cobrança de taxa.</li>
+                    <li>O salão se reserva o direito de alterar horários e profissionais em caso de necessidade.</li>
+                    <li>O cliente é responsável por fornecer informações corretas no momento do agendamento.</li>
+                </ol>
+                <p>Estes termos podem ser atualizados a qualquer momento, com aviso prévio aos usuários cadastrados.</p>
+            </div>
+            <button id="aceitar-termos" class="btn-login">Aceitar e Fechar</button>
+        </div>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html> 

@@ -1,54 +1,45 @@
-<header>
+# Aplicativo de Agendamento para Salão de Beleza
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+Um aplicativo simples para gerenciar agendamentos em salões de beleza.
 
-# GitHub Pages
+## Funcionalidades
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
+- Calendário visual para seleção de datas
+- Formulário de agendamento com validação
+- Visualização de horários disponíveis
+- Armazenamento local de agendamentos (localStorage)
+- Lista de serviços oferecidos
+- Design responsivo para visualização em dispositivos móveis
 
-</header>
+## Como Usar
 
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+1. Abra o arquivo `index.html` em seu navegador
+2. Selecione uma data no calendário 
+3. Escolha um serviço e horário disponível
+4. Preencha seus dados pessoais
+5. Confirme o agendamento
 
-## Step 1: Enable GitHub Pages
+## Estrutura do Projeto
 
-_Welcome to GitHub Pages and Jekyll :tada:!_
+- `index.html` - Estrutura principal da página
+- `styles.css` - Estilos e aparência do aplicativo
+- `script.js` - Lógica de funcionamento e interatividade
 
-The first step is to enable GitHub Pages on this [repository](https://docs.github.com/en/get-started/quickstart/github-glossary#repository). When you enable GitHub Pages on a repository, GitHub takes the content that's on the main branch and publishes a website based on its contents.
+## Personalizações Possíveis
 
-### :keyboard: Activity: Enable GitHub Pages
+### Para adicionar novos serviços:
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Under your repository name, click **Settings**.
-1. Click **Pages** in the **Code and automation** section.
-1. Ensure "Deploy from a branch" is selected from the **Source** drop-down menu, and then select `main` from the **Branch** drop-down menu.
-1. Click the **Save** button.
-1. Wait about _one minute_ then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-   > Turning on GitHub Pages creates a deployment of your repository. GitHub Actions may take up to a minute to respond while waiting for the deployment. Future steps will be about 20 seconds; this step is slower.
-   > **Note**: In the **Pages** of **Settings**, the **Visit site** button will appear at the top. Click the button to see your GitHub Pages site.
+1. Edite a seção de serviços no HTML
+2. Adicione opções no seletor de serviços no formulário
 
-<footer>
+### Para modificar horários disponíveis:
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+1. Edite o objeto `horariosPorDia` no arquivo JavaScript
+2. Ajuste as opções no seletor de horários no HTML
 
----
+## Próximos Passos
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+- Adicionar autenticação de usuários
+- Implementar área administrativa para o salão
+- Adicionar notificações por e-mail ou SMS
+- Desenvolver um painel de controle para os funcionários 
